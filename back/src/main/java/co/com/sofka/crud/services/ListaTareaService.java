@@ -1,26 +1,26 @@
 package co.com.sofka.crud.services;
 
-import co.com.sofka.crud.models.Tarea;
-import co.com.sofka.crud.repositories.TareaRepository;
+import co.com.sofka.crud.models.ListaTarea;
+import co.com.sofka.crud.repositories.ListaTareaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TareaService {
+public class ListaTareaService {
 
     @Autowired
-    private TareaRepository repository;
+    private ListaTareaRepository repository;
 
-    public Iterable<Tarea> list() {
+    public Iterable<ListaTarea> list() {
         return repository.findAll();
     }
 
-    public Tarea get(Long id){
+    public ListaTarea get(Long id){
         return repository.findById(id).orElseThrow();
     }
 
-    public Tarea save(Tarea tarea){
-        return repository.save(tarea);
+    public ListaTarea save(ListaTarea listaTarea){
+        return repository.save(listaTarea);
     }
 
     public void delete(Long id){
