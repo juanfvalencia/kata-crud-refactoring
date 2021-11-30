@@ -1,11 +1,7 @@
-import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 
-const initialState = {
-  todo: { list: [], item: {} }
-  //tarea:{ taskList: [], item: {}}
-};
-const Store = createContext(initialState)
+
 
 
 const Form = () => {
@@ -189,14 +185,7 @@ function reducer(state, action) {
   }
 }
 
-const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
 
-  return <Store.Provider value={{ state, dispatch }}>
-    {children}
-  </Store.Provider>
-
-}
 
 function App() {
   return <StoreProvider>
