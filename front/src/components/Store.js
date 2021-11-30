@@ -3,7 +3,7 @@ import Reducer from './Reducer';
 
 const initialState = { 
 	todo:{ todoList: [], item: {}},
-    tarea:{ tareaList: [], item: {}}
+    tarea:{ tareaLista: [], item: {}}
 };
 
 const Store = createContext(initialState);
