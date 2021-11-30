@@ -2,17 +2,17 @@ import React, { useContext, useEffect } from 'react';
 import Store from '../Store';
 import HOST_API from '../Connection';
 
-const Lista = (TareaListaId) => {
+const Lista = (ListaTareaId) => {
 	const { dispatch, state: { todo } } = useContext(Store);
-	const currentLista = todo.todoLista.filter(todo => {
-		return todo.idLista === TareaListaId.TareaListaId;
+	const currentLista = todo.todoList.filter(todo => {
+		return todo.idList === ListaTareaId.ListaTareaId;
 	});
 
 	useEffect(() => {
 		fetch(HOST_API + "/todolist")
 			.then(response => response.json())
-			.then((todoLista) => {
-				dispatch({ type: "update-list", todoLista })
+			.then((todoList) => {
+				dispatch({ type: "update-list", todoList })
 			})
 	}, [dispatch]);
 
@@ -33,7 +33,7 @@ const Lista = (TareaListaId) => {
 		const request = {
 			name: item.name,
 			id: item.id,
-			idLista: item.idLista,
+			idList: item.idList,
 			completed: event.target.checked
 		};
 

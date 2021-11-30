@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext } from "react";
 import Store from "../Store";
 import HOST_API from "../Connection";
 
-const Form = (TareaListaId) => {
+const Form = (ListaTareaId) => {
   const formRef = useRef(null);
   const {
     dispatch,
@@ -17,7 +17,7 @@ const Form = (TareaListaId) => {
     const request = {
       name: state.name,
       id: null,
-      idList: TareaListaId.TareaListaId,
+      idList: ListaTareaId.ListaTareaId,
       completed: false,
     };
     const vsExprReg = /[A-Za-z0-9_]/;
@@ -48,7 +48,7 @@ const Form = (TareaListaId) => {
     const request = {
       name: state.name,
       id: item.id,
-      idList: TareaListaId.TareaListaId,
+      idList: ListaTareaId.ListaTareaId,
       completed: item.isCompleted,
     };
 
