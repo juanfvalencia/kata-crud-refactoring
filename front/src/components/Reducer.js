@@ -1,20 +1,20 @@
 function Reducer(state, action) {
 	switch (action.type) {
-		case 'update-tarealista':
-			const tareaUpdateLista = state.tarea;
-			tareaUpdateLista.tareaLista = action.tareaLista;
-			return { ...state, tarea: tareaUpdateLista }
+		case 'update-listatarea':
+			const listaUpdateTarea = state.tarea;
+			listaUpdateTarea.listatarea = action.listatarea;
+			return { ...state, tarea: listaUpdateTarea }
 		case 'add-tarea':
-			const newTareaLista = state.tarea.tareaLista;
-			newTareaLista.push(action.item);
-			return { ...state, tarea: { tareaLista: newTareaLista, item: {} } }
+			const newListaTarea = state.tarea.listatarea;
+			newListaTarea.push(action.item);
+			return { ...state, tarea: { listatarea: newListaTarea, item: {} } }
 
 		case 'delete-tarea':
 			const tareaDeleteItem = state.tarea;
-			const tareaListaUpdate = tareaDeleteItem.tareaLista.filter((item) => {
+			const listaTareaUpdate = tareaDeleteItem.listatarea.filter((item) => {
 				return item.id !== action.id;
 			});
-			tareaDeleteItem.tareaLista = tareaListaUpdate;
+			tareaDeleteItem.listatarea = listaTareaUpdate;
 			return { ...state, tarea: tareaDeleteItem }
 		case 'update-item':
 			const todoUpdateItem = state.todo;

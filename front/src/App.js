@@ -1,13 +1,13 @@
 import React from "react";
 import { StoreProvider } from "./Components/Store";
 import TareaForm from "./Components/Tarea/TareaForm";
-import TareaLista from "./Components/Tarea/TareaLista";
+import ListaTarea from "./Components/Tarea/ListaTarea";
 
 function App() {
   return <div className= "container text-center">
       <StoreProvider>
         <TareaForm />
-        <TareaLista />
+        <ListaTarea />
     </StoreProvider>
   </div>
   

@@ -4,8 +4,8 @@ import Store from '../Store';
 
 const TareaForm = () => {
 	const formRef = useRef(null);
-	const { dispatch, state: { task } } = useContext(Store);
-	const item = task.item;
+	const { dispatch, state: { tarea } } = useContext(Store);
+	const item = tarea.item;
 	const [state, setState] = useState(item);
 
     const onAdd = (event) => {
